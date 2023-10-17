@@ -23,7 +23,7 @@ namespace Race
             m_wheels = GetComponent<WheelsComponent>();
             m_input = GetComponent<BaseInputComponent>();
             m_rb = GetComponent<Rigidbody>();
-
+            m_rb.centerOfMass = m_centerMass;
             m_input.OnHendBrakeEvent += OnHandBrake;
         }
 
@@ -31,7 +31,7 @@ namespace Race
         {
             m_wheels.UpdateVisual(m_input.Rotate * m_maxSteerAngle);
             var torque = m_input.Acceleration * m_torque / 2f;
-            foreach (var wheel in m_wheels.GetFrontWheels)
+            foreach (var wheel in m_wheels.GetRearWheels)
             {
                 wheel.motorTorque = torque;
             }
@@ -54,6 +54,12 @@ namespace Race
                     wheel.brakeTorque = 0f;
                 }
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(transform.TransformPoint(m_centerMass), .2f);
         }
 
         private void OnDestroy()
