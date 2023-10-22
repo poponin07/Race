@@ -14,11 +14,9 @@ public class TimerComponent : MonoBehaviour
    private float m_raceTime;
    private Coroutine m_raceTimerCor;
    private float m_startTimer = 3;
-
-   private float m_min;
-   private float m_sec;
+   
    private float m_msec;
-   private float aaa = 0.0001f;
+
 
    private void Start()
    {
@@ -39,36 +37,13 @@ public class TimerComponent : MonoBehaviour
    
    IEnumerator  CountRaceTimer()
    {
-      //if (m_raceTime != 0) m_raceTime = 0f;
-      m_msec = m_sec = m_min = 0f;
-      float inx = 0f;
-         while (true)
-         {
-            m_raceTimerText.text = $"time {m_min.ToString("00")}:{m_sec.ToString("00")}:{m_msec}";
-            
-            inx += Time.deltaTime;
-            
-            if (inx > 0.099)
-            {
-               inx = 0f;
-               m_msec++;
-            }
-            if (m_msec > 9f)
-            {
-               m_msec = 0f;
-               m_sec++;
-            }
-            
-            if (m_sec > 59f)
-            {
-               m_sec = 0f;
-               m_min++;
-            }
-            
-           
+      while (true)
+     {
+         m_msec += Time.deltaTime * 1000;
+         TimeSpan ts = TimeSpan.FromMilliseconds(m_msec);
+         m_raceTimerText.text = string.Format("{0:mm}: {0:ss}: {0:%f}", ts);
          yield return null;
-      }
-      
+     }
    }
 }
 }
