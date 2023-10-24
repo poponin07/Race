@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cars;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,19 +11,10 @@ namespace Race
 public class TimerComponent : MonoBehaviour
 {
    [SerializeField] private Text m_raceTimerText;
-   [SerializeField] private Text m_startTimerText;
    private float m_raceTime;
    private Coroutine m_raceTimerCor;
    private float m_startTimer = 3;
-   
    private float m_msec;
-
-
-   private void Start()
-   {
-      StartCountRaceTime();
-   }
-
    public float GetRaceTime() =>  m_raceTime;
 
    public void StartCountRaceTime()
@@ -33,6 +25,7 @@ public class TimerComponent : MonoBehaviour
    public void StopRaceTimer()
    {
       StopCoroutine(m_raceTimerCor);
+      
    }
    
    IEnumerator  CountRaceTimer()
@@ -44,6 +37,7 @@ public class TimerComponent : MonoBehaviour
          m_raceTimerText.text = string.Format("{0:mm}: {0:ss}: {0:%f}", ts);
          yield return null;
      }
+      
    }
 }
 }

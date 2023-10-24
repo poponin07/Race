@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpeedometerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TimerComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -73,6 +74,8 @@
       <workItem from="1697573741265" duration="1105000" />
       <workItem from="1697656040571" duration="6969000" />
       <workItem from="1697980320059" duration="3239000" />
+      <workItem from="1698178639781" duration="4141000" />
+      <workItem from="1698182845911" duration="1000" />
     </task>
     <servers />
   </component>

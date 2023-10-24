@@ -14,9 +14,15 @@ namespace Race
         private void OnEnable()
         {
             m_controls = new CarControls();
-            m_controls.Car.Enable();
+            //m_controls.Car.Enable();
             m_controls.Car.handBrake.performed += _ => CallHandBrake(true);
             m_controls.Car.handBrake.canceled += _ => CallHandBrake(false);
+        }
+
+        public void OnPlayerInput(bool inputValue)
+        {
+            if (inputValue) m_controls.Car.Enable();
+            else m_controls.Car.Disable();
         }
 
         protected override void FixedUpdate()
