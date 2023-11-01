@@ -22,10 +22,10 @@ public class TimerComponent : MonoBehaviour
       m_raceTimerCor = StartCoroutine(CountRaceTimer());
    }
 
-   public void StopRaceTimer()
+   public float StopRaceTimer()
    {
       StopCoroutine(m_raceTimerCor);
-      
+      return m_msec;
    }
    
    IEnumerator  CountRaceTimer()

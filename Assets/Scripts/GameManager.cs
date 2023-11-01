@@ -12,6 +12,8 @@ namespace Race
         [SerializeField] private StartScript m_startScript;
         [SerializeField] private TimerComponent m_timer;
         [SerializeField] private PlayerController m_playerController;
+        [SerializeField] private JsonComponent m_jsonComp;
+        [SerializeField] private GameObject m_panel;
         private void Start()
         {
             m_startScript.StartCountdown();
@@ -27,7 +29,13 @@ namespace Race
             m_playerController.OnPlayerInput(input);
         }
         
-        public void EndRace()
+        public void EndRace(float score)
+        {
+            PlayerInputOn(false);
+            m_panel.SetActive(true);
+        }
+
+        public void AddNewScore(string playerName, int score)
         {
             
         }

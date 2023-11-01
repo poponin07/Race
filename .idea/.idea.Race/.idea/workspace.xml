@@ -8,7 +8,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bb54d6aea674541a27967bb53832aa417abf06ffec33ca1f67377d7528a66/System.Runtime.Serialization.Json.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/JsonComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpeedometerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TimerComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,6 +78,12 @@
       <workItem from="1697980320059" duration="3239000" />
       <workItem from="1698178639781" duration="4141000" />
       <workItem from="1698182845911" duration="1000" />
+      <workItem from="1698481595807" duration="1881000" />
+      <workItem from="1698579032154" duration="3937000" />
+      <workItem from="1698784206296" duration="3693000" />
+      <workItem from="1698867217253" duration="364000" />
+      <workItem from="1698867610507" duration="77000" />
+      <workItem from="1698868064135" duration="3400000" />
     </task>
     <servers />
   </component>
