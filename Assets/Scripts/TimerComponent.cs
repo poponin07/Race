@@ -37,7 +37,6 @@ public class TimerComponent : MonoBehaviour
          m_raceTimerText.text = string.Format("{0:mm}: {0:ss}: {0:%f}", ts);
          yield return null;
      }
-      
    }
 }
 }

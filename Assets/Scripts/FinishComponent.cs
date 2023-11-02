@@ -20,6 +20,11 @@ namespace Race
         {
             m_playerName = m_inputField.text;
         }
+
+        public string GetPlayerName()
+        {
+            return m_playerName;
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponentInParent<PlayerController>() != null)

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using Newtonsoft.Json;
+using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
 
@@ -11,27 +12,37 @@ namespace Race
 {
     public class JsonComponent : MonoBehaviour
     {
-        private static string m_file = "score.json";
-        private static string m_path = "/Scripts";
+        private  string m_file = "score.json";
+        private  string m_path = "/Scripts";
 
-        private static Dictionary<string, int> score = new()
-        {
+         static Dictionary<string, float> _score = new();
 
-        };
-        
-        public static void Save()
+         private void Start()
+         {
+             Load();
+         }
+
+         public void AddScore(string name, float score)
+         {
+             Math.Round(score,0);
+             _score.Add(name, score);
+         }
+         
+         public  void Save()
         {
-            string json = JsonConvert.SerializeObject(score, Formatting.Indented);
+            
+            string json = JsonConvert.SerializeObject(_score, Formatting.Indented);
             PlayerPrefs.SetString("test_score", json);
 
             Debug.LogError(json);
         }
         
         
-        public static void Load()
+        public  void Load()
         {
             string json = PlayerPrefs.GetString("test_score", "{}");
-            score = JsonConvert.DeserializeObject<Dictionary<string, int>>(json);
+            
+            _score = JsonConvert.DeserializeObject<Dictionary<string, float>>(json);
             Debug.LogError(json);
         }
         

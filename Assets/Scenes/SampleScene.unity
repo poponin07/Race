@@ -530,7 +530,7 @@ MonoBehaviour:
   m_timerComp: {fileID: 937448644}
   m_gm: {fileID: 963194230}
   m_scoreText: {fileID: 1200689744}
-  m_inputField: {fileID: 0}
+  m_inputField: {fileID: 357954948}
 --- !u!1001 &479436126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1328,6 +1328,7 @@ MonoBehaviour:
   m_timer: {fileID: 937448644}
   m_playerController: {fileID: 937448640}
   m_jsonComp: {fileID: 1537717841}
+  m_finishComp: {fileID: 477272263}
   m_panel: {fileID: 1902867847}
 --- !u!1 &968126408
 GameObject:
@@ -1802,11 +1803,11 @@ RectTransform:
   m_Father: {fileID: 1537717840}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16, y: 32}
-  m_SizeDelta: {x: -458.0107, y: -237.6797}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -16, y: -86.83986}
+  m_SizeDelta: {x: 681.98926, y: 351.31348}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1467608320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,11 +2262,11 @@ RectTransform:
   m_Father: {fileID: 1537717840}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16, y: 32}
-  m_SizeDelta: {x: -458.0107, y: -237.6797}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -16, y: -86.83984}
+  m_SizeDelta: {x: 681.98926, y: 258.3203}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1902867849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,6 +2405,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 477272263}
+        m_TargetAssemblyTypeName: Race.FinishComponent, Assembly-CSharp
+        m_MethodName: SetPlayerName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 963194230}
+        m_TargetAssemblyTypeName: Race.GameManager, Assembly-CSharp
+        m_MethodName: AddNewScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
