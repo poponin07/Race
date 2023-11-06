@@ -13,8 +13,20 @@ namespace Race
         [SerializeField] private GameManager m_gm;
         [SerializeField] private Text m_scoreText;
         [SerializeField] private InputField m_inputField;
-        private string m_playerName;
+        //[SerializeField] private JsonComponent m_jsonComp;
+        string m_playerName;
         private float m_score;
+
+        public string GetName()
+        {
+            return m_playerName;
+        }
+
+        public float GetScore()
+        {
+            return m_score;
+        }
+        
 
         public void SetPlayerName()
         {

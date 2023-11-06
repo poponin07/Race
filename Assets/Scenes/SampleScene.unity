@@ -530,7 +530,7 @@ MonoBehaviour:
   m_timerComp: {fileID: 937448644}
   m_gm: {fileID: 963194230}
   m_scoreText: {fileID: 1200689744}
-  m_inputField: {fileID: 0}
+  m_inputField: {fileID: 357954948}
 --- !u!1001 &479436126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1781,12 +1781,12 @@ GameObject:
   - component: {fileID: 1467608321}
   - component: {fileID: 1467608320}
   m_Layer: 5
-  m_Name: LeaderBor
+  m_Name: LeaderBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1467608319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1804,8 +1804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16, y: 32}
-  m_SizeDelta: {x: -458.0107, y: -237.6797}
+  m_AnchoredPosition: {x: -16, y: -19.0906}
+  m_SizeDelta: {x: -458.0107, y: -135.4986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1467608320
 MonoBehaviour:
@@ -1963,6 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a16be11abbbd64994227d1132ff368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_finishComp: {fileID: 477272263}
 --- !u!1 &1596944536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6989894919236351880, guid: 4d1624804e8167f479ab63c5302ff1d5, type: 3}
@@ -2404,6 +2405,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 477272263}
+        m_TargetAssemblyTypeName: Race.FinishComponent, Assembly-CSharp
+        m_MethodName: SetPlayerName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1537717841}
+        m_TargetAssemblyTypeName: Race.JsonComponent, Assembly-CSharp
+        m_MethodName: AddScore
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

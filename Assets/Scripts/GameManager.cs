@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cars;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace Race
@@ -35,9 +36,11 @@ namespace Race
             m_panel.SetActive(true);
         }
 
-        public void AddNewScore(string playerName, int score)
+        [MenuItem("Tools/ClearPrefs")]
+        public static void ClearPrefs()
         {
-            
+            PlayerPrefs.DeleteAll();
         }
+            
     }
 }
