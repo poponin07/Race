@@ -14,12 +14,12 @@ namespace Race
         private  string m_file = "score.json";
         private  string m_path = "/Scripts";
         [SerializeField] private FinishComponent m_finishComp;
+        [SerializeField] private GameManager m_gameManager;
         private string m_newName;
         private float m_newScore;
 
-        public  Dictionary<string, float> score = new()
-        {
-        };
+        public  Dictionary<string, float> scoreDic = new();
+        public List<ScoreItem> scoreList = new List<ScoreItem>();
 
         private void Start()
         {
@@ -30,25 +30,42 @@ namespace Race
         {
             m_newName = m_finishComp.GetName();
             m_newScore = m_finishComp.GetScore();
-            score.Add(m_newName,m_newScore);
+
+            if (scoreDic.ContainsKey(m_newName)) scoreDic[m_newName] = m_newScore;
+            else scoreDic.Add(m_newName,m_newScore);
+            
             Save();
         }
     
         public  void Save()
         {
-            string json = JsonConvert.SerializeObject(score, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(scoreDic, Formatting.Indented);
             PlayerPrefs.SetString("test_score", json);
             Debug.LogError(json);
+            m_gameManager.ShowLeaderBoard(scoreDic.Count + 1);
         }
         
         
         public  void Load()
         {
             string json = PlayerPrefs.GetString("test_score", "{}");
-            score = JsonConvert.DeserializeObject<Dictionary<string, float>>(json);
+            scoreDic = JsonConvert.DeserializeObject<Dictionary<string, float>>(json);
             Debug.LogError(json);
         }
-        
+
+        private void InitializationsScoreList()
+        {
+            foreach (var pair in scoreDic)
+            {
+                //scoreList.Add(); 
+            }
+        }
+
+        public class ScoreItem
+        {
+            public string name;
+            public float score;
+        }
 }
     
 }

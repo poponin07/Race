@@ -12,6 +12,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JsonComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrolComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpeedometerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TimerComponent.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -84,6 +85,7 @@
       <workItem from="1698867217253" duration="364000" />
       <workItem from="1698867610507" duration="77000" />
       <workItem from="1698868064135" duration="3400000" />
+      <workItem from="1699382515346" duration="3690000" />
     </task>
     <servers />
   </component>

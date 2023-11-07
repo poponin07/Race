@@ -35,6 +35,12 @@ namespace Race
             PlayerInputOn(false);
             m_panel.SetActive(true);
         }
+        
+        public void ShowLeaderBoard(int countPanelsSccore)
+        {
+            
+        }
+        
 
         [MenuItem("Tools/ClearPrefs")]
         public static void ClearPrefs()
