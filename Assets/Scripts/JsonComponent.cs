@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using Random = UnityEngine.Random;
 
@@ -42,6 +43,7 @@ namespace Race
             string json = JsonConvert.SerializeObject(scoreDic, Formatting.Indented);
             PlayerPrefs.SetString("test_score", json);
             Debug.LogError(json);
+            InitializationsScoreList();
             m_gameManager.ShowLeaderBoard(scoreDic.Count + 1);
         }
         
@@ -53,12 +55,18 @@ namespace Race
             Debug.LogError(json);
         }
 
-        private void InitializationsScoreList()
+        private List<ScoreItem> InitializationsScoreList()
         {
             foreach (var pair in scoreDic)
             {
-                //scoreList.Add(); 
+                ScoreItem item = new ScoreItem();
+                item.name = pair.Key;
+                item.score = pair.Value;
+                scoreList.Add(item); 
             }
+            
+            var sortedPeople2 = scoreList.OrderBy(p => p.score);
+            return sortedPeople2.ToList();
         }
 
         public class ScoreItem
