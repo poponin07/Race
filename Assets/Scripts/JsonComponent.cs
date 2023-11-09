@@ -20,11 +20,25 @@ namespace Race
         private float m_newScore;
 
         public  Dictionary<string, float> scoreDic = new();
-        public List<ScoreItem> scoreList = new List<ScoreItem>();
+        public List<ScoreItem> scoreList = new();
 
         private void Start()
         {
             Load();
+        }
+        
+        private List<ScoreItem> InitializationsScoreList()
+        {
+            foreach (var pair in scoreDic)
+            {
+                ScoreItem item = new ScoreItem();
+                item.name = pair.Key;
+                item.score = pair.Value;
+                scoreList.Add(item); 
+            }
+            
+            var sortedPeople2 = scoreList.OrderBy(p => p.score);
+            return sortedPeople2.ToList();
         }
 
         public void AddScore()
@@ -43,7 +57,7 @@ namespace Race
             string json = JsonConvert.SerializeObject(scoreDic, Formatting.Indented);
             PlayerPrefs.SetString("test_score", json);
             Debug.LogError(json);
-            InitializationsScoreList();
+            scoreList = InitializationsScoreList();
             m_gameManager.ShowLeaderBoard(scoreDic.Count + 1);
         }
         
@@ -55,18 +69,9 @@ namespace Race
             Debug.LogError(json);
         }
 
-        private List<ScoreItem> InitializationsScoreList()
+        public List<ScoreItem> GetScoreList()
         {
-            foreach (var pair in scoreDic)
-            {
-                ScoreItem item = new ScoreItem();
-                item.name = pair.Key;
-                item.score = pair.Value;
-                scoreList.Add(item); 
-            }
-            
-            var sortedPeople2 = scoreList.OrderBy(p => p.score);
-            return sortedPeople2.ToList();
+            return scoreList;
         }
 
         public class ScoreItem
