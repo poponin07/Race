@@ -15,6 +15,7 @@ namespace Race
         [SerializeField] private PlayerController m_playerController;
         [SerializeField] private JsonComponent m_jsonComp;
         [SerializeField] private GameObject m_panel;
+        [SerializeField] private ScrolComponent m_scrolComponent;
         private void Start()
         {
             m_startScript.StartCountdown();
@@ -36,9 +37,9 @@ namespace Race
             m_panel.SetActive(true);
         }
         
-        public void ShowLeaderBoard(int countPanelsSccore)
+        public void ShowLeaderBoard()
         {
-            
+            m_scrolComponent.Inic();
         }
         
 

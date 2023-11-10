@@ -57,8 +57,9 @@ namespace Race
             string json = JsonConvert.SerializeObject(scoreDic, Formatting.Indented);
             PlayerPrefs.SetString("test_score", json);
             Debug.LogError(json);
-            scoreList = InitializationsScoreList();
-            m_gameManager.ShowLeaderBoard(scoreDic.Count + 1);
+            scoreList.Clear();
+            var list = InitializationsScoreList();
+            m_gameManager.ShowLeaderBoard();
         }
         
         
