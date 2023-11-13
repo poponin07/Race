@@ -13,22 +13,21 @@ namespace Race
         [SerializeField] private GameManager m_gm;
         [SerializeField] private Text m_scoreText;
         [SerializeField] private InputField m_inputField;
-        //[SerializeField] private JsonComponent m_jsonComp;
         string m_playerName;
         private float m_score;
 
-        public string GetName()
+        public string GetName() //возвращает имя игрока
         {
             return m_playerName;
         }
 
-        public float GetScore()
+        public float GetScore() //возвращает время игрока
         {
             return m_score;
         }
         
 
-        public void SetPlayerName()
+        public void SetPlayerName() // имя игрока
         {
             m_playerName = m_inputField.text;
         }
@@ -39,7 +38,7 @@ namespace Race
                 m_score = m_timerComp.StopRaceTimer();
                 TimeSpan ts = TimeSpan.FromMilliseconds(m_score);
                 m_scoreText.text = string.Format("{0:mm}: {0:ss}: {0:%f}", ts);
-                m_gm.EndRace(m_score);
+                m_gm.EndRace();
             }
         }
     }

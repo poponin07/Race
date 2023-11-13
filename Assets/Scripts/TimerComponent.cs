@@ -28,7 +28,7 @@ public class TimerComponent : MonoBehaviour
       return m_msec;
    }
    
-   IEnumerator  CountRaceTimer()
+   IEnumerator  CountRaceTimer() // таймер
    {
       while (true)
      {

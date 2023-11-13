@@ -16,12 +16,7 @@ namespace Cars
 
         public WheelCollider[] GetFrontWheels => m_frontWheels;
         public WheelCollider[] GetRearWheels => m_rearWheels;
-        //public WheelCollider[] GetAllWheels => m_allWheels;
 
-        private void Start()
-        {
-            //m_allWheels = new WheelCollider[] { m_frontWheels[0], m_frontWheels[1], m_rearWheels[0], m_rearWheels[1] };
-        }
 
         public void UpdateVisual(float angle)
         {

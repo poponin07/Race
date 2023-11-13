@@ -16,7 +16,7 @@ namespace Race
         private Dictionary<string, float> scoreDictionary;
         private List<float> scoreList;
         
-        public void Inic()
+        public void Initialization()
         {
             var nameScoreList = m_jsonComponent.GetScoreList();
             m_countPanels = nameScoreList.Count;
@@ -41,7 +41,7 @@ namespace Race
                Destroy(child.gameObject);
             }
 
-            foreach (var model in models)
+            foreach (var model in models) //создание конструкции
             {
                 var instance = Instantiate(prefab.gameObject);
                 instance.transform.SetParent(content,false);
@@ -49,7 +49,7 @@ namespace Race
             }
         }
 
-        void InitializeItemView(GameObject viewGameObject, ItemSoreView model)
+        void InitializeItemView(GameObject viewGameObject, ItemSoreView model)//присвоение параметров
         {
             ScorePanel view = new ScorePanel(viewGameObject.transform);
             view.placeText.text = model.place;

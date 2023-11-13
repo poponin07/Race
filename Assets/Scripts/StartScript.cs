@@ -13,12 +13,12 @@ namespace Cars
         [SerializeField] private int m_startCountMax;
         [SerializeField] private GameManager m_gameManaer;
 
-        public void StartCountdown()
+        public void StartCountdown() //отчет на старте
         {
             StartCoroutine(StartCountdownCorut());
         }
         
-        IEnumerator StartCountdownCorut()
+        IEnumerator StartCountdownCorut() //отсчет на старте
         {
             int indx = m_startCountMax;
             m_gameManaer.PlayerInputOn(false);

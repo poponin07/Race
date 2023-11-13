@@ -59,6 +59,7 @@ namespace Race
             Debug.LogError(json);
             scoreList.Clear();
             var list = InitializationsScoreList();
+            scoreList = list;
             m_gameManager.ShowLeaderBoard();
         }
         
